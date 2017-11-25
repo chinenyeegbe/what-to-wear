@@ -1,0 +1,62 @@
+{
+	"outfits": [
+		{
+			"top": "red flannel",
+			"bottom": "blue jeans",
+			"socks": "any",
+			"shoes": "black",
+			"warmth": 2,
+			"formalness": 2,
+			"quality": 3,
+			"risk": 1
+		}, {
+			"top": "red flannel",
+			"bottom": "blue jeans",
+			"socks": "any",
+			"shoes": "black",
+			"jacket": "black",
+			"warmth": 4,
+			"formalness": 2,
+			"quality": 3,
+			"risk": 1
+		}, {
+			"top": "nasa shirt",
+			"bottom": "light blue jeans",
+			"socks": "white or gray",
+			"shoes": "white",
+			"warmth": 1,
+			"formalness": 1,
+			"quality": 3,
+			"risk": 2
+		}, {
+			"top": "nasa shirt",
+			"bottom": "light blue jeans",
+			"socks": "white or gray",
+			"shoes": "white",
+			"jacket": "black",
+			"warmth": 3,
+			"formalness": 1,
+			"quality": 2,
+			"risk": 2
+		},  {
+			"top": "yellow striped sweatshirt",
+			"bottom": "black chinos",
+			"socks": "white or gray",
+			"shoes": "black",
+			"warmth": 3,
+			"formalness": 1,
+			"quality": 3,
+			"risk": 3
+		}, {
+			"top": "yellow striped sweatshirt",
+			"bottom": "black chinos",
+			"socks": "white or gray",
+			"shoes": "black",
+			"jacket": "black",
+			"warmth": 4,
+			"formalness": 1,
+			"quality": 3,
+			"risk": 3
+		}
+	]
+}
