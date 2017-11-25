@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, Text, View, Button, Slider } from 'react-native';
 import outfits_ from './outfits.json';
 import clothes from './clothes.json';
+import secrets from './secrets.json'
 const outfits = outfits_.outfits
 
 export default class App extends React.Component {
@@ -16,7 +17,17 @@ export default class App extends React.Component {
   }
 
   componentWillMount(){
-    //console.log(Object.entries(clothes))
+    this.refreshWeather()  
+  }
+
+  async refreshWeather(){
+    let resp = await fetch('https://api.openweathermap.org/data/2.5/weather?id=5125771&appid=' + secrets.WEATHER_API_KEY)
+    let body = await resp.json()
+    let temp = KelvinToFarenheit(body.main.temp)
+    let minTemp = KelvinToFarenheit(body.main["temp_min"])
+    let maxTemp = KelvinToFarenheit(body.main["temp_max"])
+    let weather = body.weather[0].description
+    this.setState({temp, minTemp, maxTemp, weather})
   }
 
   clothesAvailable(outfit){
@@ -34,7 +45,8 @@ export default class App extends React.Component {
 
     return (outfit.quality === this.state.quality || ((Math.abs(outfit.quality - this.state.quality) === 1) && r()))  && 
            (outfit.risk === this.state.risk || (Math.abs(outfit.risk - this.state.risk) === 1 &&  r())) &&
-           (outfit.formalness === this.state.formalness || (Math.abs(outfit.formalness - this.state.formalness) == 1 && r()))
+           (outfit.formalness === this.state.formalness || (Math.abs(outfit.formalness - this.state.formalness) == 1 && r())) &&
+           (outfit.minTemp < this.state.minTemp && outfit.maxTemp > this.state.maxTemp)
   }
 
   render() {
@@ -51,6 +63,7 @@ export default class App extends React.Component {
 
     return (
       <View style={styles.container}>
+        <Text style={{marginBottom: 20}}> {this.state.weather}, {Math.round(this.state.temp)}F </Text>
         <Outfit {...outfit} />
         <Text style={{marginTop: 20}}> Quality </Text>
         <Slider 
@@ -108,6 +121,10 @@ export default class App extends React.Component {
       </View>
     );
   }
+}
+
+function KelvinToFarenheit(t){
+  return t * 9/5 - 459.67
 }
 
 function r(){

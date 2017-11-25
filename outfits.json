@@ -5,7 +5,9 @@
 			"bottom": "blue jeans",
 			"socks": "any",
 			"shoes": "black",
-			"warmth": 2,
+			"jacket": "winter",
+			"minTemp": 0,
+			"maxTemp": 45,
 			"formalness": 2,
 			"quality": 3,
 			"risk": 1
@@ -15,7 +17,8 @@
 			"socks": "any",
 			"shoes": "black",
 			"jacket": "black",
-			"warmth": 4,
+			"minTemp": 45,
+			"maxTemp": 65,
 			"formalness": 2,
 			"quality": 3,
 			"risk": 1
@@ -24,7 +27,8 @@
 			"bottom": "light blue jeans",
 			"socks": "white or gray",
 			"shoes": "white",
-			"warmth": 1,
+			"minTemp": 65,
+			"maxTemp": 75,
 			"formalness": 1,
 			"quality": 3,
 			"risk": 2
@@ -34,7 +38,8 @@
 			"socks": "white or gray",
 			"shoes": "white",
 			"jacket": "black",
-			"warmth": 3,
+			"minTemp": 55,
+			"maxTemp": 65,
 			"formalness": 1,
 			"quality": 2,
 			"risk": 2
@@ -43,7 +48,9 @@
 			"bottom": "black chinos",
 			"socks": "white or gray",
 			"shoes": "black",
-			"warmth": 3,
+			"jacket": "winter",
+			"minTemp": 0,
+			"maxTemp": 45,
 			"formalness": 1,
 			"quality": 3,
 			"risk": 3
@@ -53,7 +60,8 @@
 			"socks": "white or gray",
 			"shoes": "black",
 			"jacket": "black",
-			"warmth": 4,
+			"minTemp": 45,
+			"maxTemp": 65,
 			"formalness": 1,
 			"quality": 3,
 			"risk": 3
