@@ -1,7 +1,9 @@
 Too *busy* and *important* to worry about trivialities such as clothing? **Introducing WhatToWear!** 
 
 ## WhatToWear
-WhatToWear will recommend you outfits to wear based on what clothes you have available, the weather, and customized tags. To clarify, WhatToWear does not come up with the outfits—-you do, and enter them into the database once. From there, WhatToWear keeps track of your clothing inventory. You can specify how many times you are willing to rewear a piece, and after you have worn it that many times, WhatToWear will stop recommending outfits that use that piece (until you tell the app you have done your laundry). You can also tag your outfits, for example, by how formal they are and then use that to limit what outfits WhatToWear recommends.
+WhatToWear will recommend you outfits to wear based on what clothes you have available, the weather, and customized tags.
+
+WhatToWear does not come up with the outfits—-you do, and enter them into the database once. From there, WhatToWear keeps track of your clothing inventory. You can specify how many times you are willing to rewear a piece, and after you have worn it that many times, WhatToWear will stop recommending outfits that use that piece (until you tell the app you have done your laundry).
 
 ### Screenshots
 
