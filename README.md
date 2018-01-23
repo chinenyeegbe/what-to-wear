@@ -8,8 +8,8 @@ WhatToWear does not come up with the outfits—-you do, and enter them into the 
 ### Screenshots
 
 <p align="center">
-  <img src="https://s3.amazonaws.com/rohanp/whattowear1.PNG" width="350"/>
-  <img src="https://s3.amazonaws.com/rohanp/whattowear2.PNG" width="350"/>
+  <img src="https://s3.amazonaws.com/rohanp/whattowear1.png" width="350"/>
+  <img src="https://s3.amazonaws.com/rohanp/whattowear2.png" width="350"/>
 </p>
 
 ### Wow what a useful app! How do I use WhatToWear?
