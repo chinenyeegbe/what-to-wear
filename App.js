@@ -1,9 +1,9 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, Slider } from 'react-native';
-import outfits_ from './outfits.json';
-import clothes from './clothes.json';
-import secrets from './secrets.json'
-const outfits = outfits_.outfits
+import store from 'react-native-simple-store';
+import outfits from './clothes/outfits.json';
+import originalInventory from './clothes/inventory.json';
+import secrets from './secrets.json';
 
 export default class App extends React.Component {
   constructor(){
@@ -11,60 +11,107 @@ export default class App extends React.Component {
     this.state = {
       offset : parseInt(Math.random() * outfits.length),
       quality: 2,
-      risk: 2,
-      formalness: 2
+      trendy: 2,
+      formalness: 2,
+      inventory: {}
     } 
   }
 
   componentWillMount(){
-    this.refreshWeather()  
+    this.refreshWeather()
+
+    store.get("inventory")
+      .then(inventory => {
+        if (!inventory){
+          store.save("inventory", originalInventory)
+          inventory = originalInventory;
+        }
+        console.log("setting inventory")
+        this.setState({inventory: inventory})
+      })
+      .catch(error => console.error(error.message));
+  }
+
+  componentWillUnmount(){
+    store.update("inventory", this.state.inventory);
   }
 
   async refreshWeather(){
-    let resp = await fetch('https://api.openweathermap.org/data/2.5/weather?id=5125771&appid=' + secrets.WEATHER_API_KEY)
-    let body = await resp.json()
-    let temp = KelvinToFarenheit(body.main.temp)
-    let minTemp = KelvinToFarenheit(body.main["temp_min"])
-    let maxTemp = KelvinToFarenheit(body.main["temp_max"])
-    let weather = body.weather[0].description
-    this.setState({temp, minTemp, maxTemp, weather})
+    try {
+      let resp = await fetch('https://api.openweathermap.org/data/2.5/weather?id=5125771&appid=' + secrets.WEATHER_API_KEY)
+      let body = await resp.json()
+      let temp = KelvinToFarenheit(body.main.temp)
+      let minTemp = KelvinToFarenheit(body.main["temp_min"])
+      let maxTemp = KelvinToFarenheit(body.main["temp_max"])
+      let weather = body.weather[0].description
+      this.setState({temp, minTemp, maxTemp, weather})
+    } catch(e) {
+      console.log("error getting weather. check your api key")
+      console.log(e)
+    }
   }
 
   clothesAvailable(outfit){
 
-    if (clothes.tops[outfit.top] < 1)
+    if (this.state.inventory[outfit.top] < 1)
       return false
 
-    if (clothes.bottoms[outfit.bottom] < 1)
+    if (this.state.inventory[outfit.bottom] < 1)
       return false
 
     return true 
   }
 
-  satisfiesContraints(outfit){
+  tempToWarmth(t){
+    if (t < 35)
+      return 5
+    if (t < 45)
+      return 4
+    if (t < 60)
+      return 3
+    if (t < 70)
+      return 2
+    if (t < 80)
+      return 1
+    else
+      return 1
+  }
 
+  satisfiesContraints(outfit){
+    return true;
     return (outfit.quality === this.state.quality || ((Math.abs(outfit.quality - this.state.quality) === 1) && r()))  && 
-           (outfit.risk === this.state.risk || (Math.abs(outfit.risk - this.state.risk) === 1 &&  r())) &&
+           (outfit.trendy === this.state.trendy || (Math.abs(outfit.trendy - this.state.trendy) === 1 &&  r())) &&
            (outfit.formalness === this.state.formalness || (Math.abs(outfit.formalness - this.state.formalness) == 1 && r())) &&
-           (outfit.minTemp < this.state.minTemp && outfit.maxTemp > this.state.maxTemp)
+           (this.state.temp === undefined || Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 1)
+  }
+
+  launder(){
+
   }
 
   render() {
-    console.log(clothes)
-
     let outfit;
     for (let i = 0; i < outfits.length; i++){
       let j = (i + this.state.offset) % outfits.length;
 
       if (this.clothesAvailable(outfits[j]) && this.satisfiesContraints(outfits[j])){
         outfit = outfits[j];
+        break;
       }
     }
-
+ 
     return (
       <View style={styles.container}>
         <Text style={{marginBottom: 20}}> {this.state.weather}, {Math.round(this.state.temp)}F </Text>
-        <Outfit {...outfit} />
+        
+        {outfit 
+          ? <Outfit {...outfit} />
+          : (<View style={styles.center}>
+              <Text>nothing found :(</Text>
+              <Text>do your laundry or something</Text>
+             </View>)
+        }
+
         <Text style={{marginTop: 20}}> Quality </Text>
         <Slider 
           style={styles.slider}
@@ -74,14 +121,14 @@ export default class App extends React.Component {
           value={this.state.quality}
           onSlidingComplete={val => this.setState({ quality: val })}
         />
-        <Text> Risk </Text>
+        <Text> Trendiness </Text>
          <Slider 
           style={styles.slider}
           minimumValue={1}
           maximumValue={3}
           step={1}
-          value={this.state.risk}
-          onSlidingComplete={val => this.setState({ risk: val })}
+          value={this.state.trendy}
+          onSlidingComplete={val => this.setState({ trendy: val })}
         />
         <Text> Formalness </Text>
         <Slider 
@@ -100,20 +147,20 @@ export default class App extends React.Component {
           <Button
             onPress={() => {
               if (outfit){
-                clothes.tops[outfit.top] -= 1
-                clothes.bottoms[outfit.bottom] -= 1
-                flushClothes()
-                this.forceUpdate()
+                let inventory = {...this.state.inventory};
+                inventory[outfit.top] -= 1;
+                inventory[outfit.bottom] -= 1;
+                this.setState({inventory: inventory});
               }
             }}
             title="Wear"
           />
           <Button
             onPress={() => {
-              Object.keys(clothes.tops).map(key => clothes.tops[key] = 1)
-              Object.keys(clothes.bottoms).map(key => clothes.bottoms[key] = 3)
-              flushClothes()
-              this.forceUpdate()
+                  this.setState({
+                      inventory: originalInventory,
+                      offset : parseInt(Math.random() * outfits.length)
+                    })
             }}
             title="Launder"
           />
@@ -129,10 +176,6 @@ function KelvinToFarenheit(t){
 
 function r(){
     return Math.random() > 0.5
-}
-
-function flushClothes(){
-  //fs.writeFile('./clothes.json', JSON.stringify(clothes, null, 2) , 'utf-8');
 }
 
 function Outfit(props){
@@ -153,6 +196,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  center: {
+    alignItems: 'center',
   },
   button: {
     flexDirection: 'row',

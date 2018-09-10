@@ -1,5 +1,12 @@
 {
+	"name": "whattowear",
   "expo": {
-    "sdkVersion": "22.0.0"
+  	"name": "whattowear",
+  	"icon": "icon.png",
+  	"version": "1.0.0",
+    "sdkVersion": "28.0.0",
+    "ios": {
+  		"bundleIdentifier": "xyz.rohanp.whattowear"
+  	}
   }
 }
