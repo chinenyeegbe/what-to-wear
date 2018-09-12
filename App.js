@@ -36,9 +36,25 @@ export default class App extends React.Component {
     store.update("inventory", this.state.inventory);
   }
 
+  getCurrentLocation(options) {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(resolve, 
+          ({code, message}) =>
+            reject(Object.assign(new Error(message), {name: "PositionError", code})),
+          options);
+    });
+  }
+
   async refreshWeather(){
     try {
-      let resp = await fetch('https://api.openweathermap.org/data/2.5/weather?id=5125771&appid=' + secrets.WEATHER_API_KEY)
+
+      let position = await this.getCurrentLocation({ enableHighAccuracy: true, 
+                                                      timeout: 20000, 
+                                                      maximumAge: 1000 });
+      let lat = position.coords.latitude;
+      let long = position.coords.longitude;
+      let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${secrets.WEATHER_API_KEY}` 
+      let resp = await fetch(url)
       let body = await resp.json()
       let temp = KelvinToFarenheit(body.main.temp)
       let minTemp = KelvinToFarenheit(body.main["temp_min"])
@@ -65,14 +81,20 @@ export default class App extends React.Component {
   tempToWarmth(t){
     if (t < 35)
       return 5
-    if (t < 45)
+    if (t < 40)
+      return 4.5
+    if (t < 47)
       return 4
+    if (t < 55)
+      return 3.5
     if (t < 60)
       return 3
+    if (t < 65)
+      return 2.5
     if (t < 70)
       return 2
-    if (t < 80)
-      return 1
+    if (t < 75)
+      return 1.5
     else
       return 1
   }
@@ -82,7 +104,7 @@ export default class App extends React.Component {
     return (outfit.quality === this.state.quality || ((Math.abs(outfit.quality - this.state.quality) === 1) && r()))  && 
            (outfit.trendy === this.state.trendy || (Math.abs(outfit.trendy - this.state.trendy) === 1 &&  r())) &&
            (outfit.formalness === this.state.formalness || (Math.abs(outfit.formalness - this.state.formalness) == 1 && r())) &&
-           (this.state.temp === undefined || Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 1)
+           (this.state.temp === undefined || Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 0.5)
   }
 
   launder(){
