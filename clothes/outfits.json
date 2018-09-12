@@ -1,27 +1,5 @@
 [
   {
-    "top": "red flannel",
-    "bottom": "dark blue jeans",
-    "jacket": "navy winter coat",
-    "shoes": "brown",
-    "socks": "any",
-    "warmth": 5,
-    "formalness": 2,
-    "quality": 3,
-    "trendy": 1
-  },
-  {
-    "top": "red flannel",
-    "bottom": "dark blue jeans",
-    "jacket": "black",
-    "shoes": "brown",
-    "socks": "any",
-    "warmth": 3,
-    "formalness": 2,
-    "quality": 3,
-    "trendy": 1
-  },
-  {
     "top": "nasa shirt",
     "bottom": "light blue jeans",
     "jacket": "",
@@ -55,6 +33,94 @@
     "trendy": 2
   },
   {
+    "top": "red flannel",
+    "bottom": "dark blue jeans",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 2,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "dark blue jeans",
+    "jacket": "navy winter coat",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 5,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "dark blue jeans",
+    "jacket": "zara navy blue",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 4,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "dark blue jeans",
+    "jacket": "black",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 3,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "black chinos",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 2,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "black chinos",
+    "jacket": "navy winter coat",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 5,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "red flannel",
+    "bottom": "black chinos",
+    "jacket": "zara navy blue",
+    "shoes": "brown",
+    "socks": "any",
+    "warmth": 4,
+    "formalness": 2,
+    "quality": 3,
+    "trendy": 1
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "black chinos",
+    "jacket": "",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
     "top": "yellow striped sweatshirt",
     "bottom": "black chinos",
     "jacket": "navy winter coat",
@@ -77,8 +143,129 @@
     "trendy": 3
   },
   {
+    "top": "yellow striped sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "navy winter coat",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "black",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 4,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "khaki bomber",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 3.5,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "yellowish khakis",
+    "jacket": "",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "yellowish khakis",
+    "jacket": "navy winter coat",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "yellowish khakis",
+    "jacket": "black",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 4,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
+    "top": "yellow striped sweatshirt",
+    "bottom": "yellowish khakis",
+    "jacket": "khaki bomber",
+    "shoes": "black",
+    "socks": "white or gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 3,
+    "trendy": 3
+  },
+  {
     "top": "burgandy sweater",
     "bottom": "black chinos",
+    "jacket": "",
+    "shoes": "brown or black",
+    "socks": "black",
+    "warmth": 3,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "burgandy sweater",
+    "bottom": "black chinos",
+    "jacket": "navy winter coat",
+    "shoes": "brown or black",
+    "socks": "black",
+    "warmth": 5,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "burgandy sweater",
+    "bottom": "khakis",
+    "jacket": "",
+    "shoes": "brown or black",
+    "socks": "black",
+    "warmth": 3,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "burgandy sweater",
+    "bottom": "khakis",
     "jacket": "black overcoat",
     "shoes": "brown or black",
     "socks": "black",
@@ -89,14 +276,25 @@
   },
   {
     "top": "burgandy sweater",
-    "bottom": "black chinos",
-    "jacket": "black",
+    "bottom": "khakis",
+    "jacket": "zara navy blue",
     "shoes": "brown or black",
     "socks": "black",
-    "warmth": 3,
-    "formalness": 2,
+    "warmth": 4,
+    "formalness": 1,
     "quality": 2,
     "trendy": 2
+  },
+  {
+    "top": "festive sweater",
+    "bottom": "black chinos",
+    "jacket": "",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 1,
+    "trendy": 3
   },
   {
     "top": "festive sweater",
@@ -106,7 +304,7 @@
     "socks": "gray",
     "warmth": 5,
     "formalness": 1,
-    "quality": 2,
+    "quality": 1,
     "trendy": 3
   },
   {
@@ -117,11 +315,67 @@
     "socks": "gray",
     "warmth": 4,
     "formalness": 1,
-    "quality": 2,
+    "quality": 1,
     "trendy": 3
   },
   {
+    "top": "festive sweater",
+    "bottom": "blue jeans",
+    "jacket": "",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 1,
+    "trendy": 3
+  },
+  {
+    "top": "festive sweater",
+    "bottom": "blue jeans",
+    "jacket": "navy winter coat",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 1,
+    "trendy": 3
+  },
+  {
+    "top": "festive sweater",
+    "bottom": "blue jeans",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 4,
+    "formalness": 1,
+    "quality": 1,
+    "trendy": 3
+  },
+  {
+    "top": "textured gray sweater",
+    "bottom": "light blue jeans",
+    "jacket": "",
+    "shoes": "khaki boots",
+    "socks": "any",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "textured gray sweater",
+    "bottom": "light blue jeans",
+    "jacket": "black overcoat",
+    "shoes": "khaki boots",
+    "socks": "any",
+    "warmth": 4,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
     "top": "columbia cc longsleeve",
+    "bottom": "khakis",
     "jacket": "",
     "shoes": "white",
     "socks": "gray",
@@ -132,6 +386,51 @@
   },
   {
     "top": "columbia cc longsleeve",
+    "bottom": "khakis",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "patagonia longsleeve",
+    "bottom": "dark blue jeans",
+    "jacket": "",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 2,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "patagonia longsleeve",
+    "bottom": "dark blue jeans",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "patagonia longsleeve",
+    "bottom": "green khakis",
+    "jacket": "",
+    "shoes": "white",
+    "socks": "gray",
+    "warmth": 2,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "patagonia longsleeve",
+    "bottom": "green khakis",
     "jacket": "black",
     "shoes": "white",
     "socks": "gray",
@@ -165,6 +464,50 @@
   {
     "top": "blue ribbed sweater",
     "bottom": "brown khakis",
+    "jacket": "black overcoat",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 4.5,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "blue ribbed sweater",
+    "bottom": "brown khakis",
+    "jacket": "navy winter coat",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "blue ribbed sweater",
+    "bottom": "yellowish khakis",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 2,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "blue ribbed sweater",
+    "bottom": "yellowish khakis",
+    "jacket": "black",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "blue ribbed sweater",
+    "bottom": "yellowish khakis",
     "jacket": "black overcoat",
     "shoes": "brown",
     "socks": "black",
@@ -174,7 +517,106 @@
     "trendy": 2
   },
   {
-    "top": "blue button down",
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 2,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "blue jeans",
+    "jacket": "khaki bomber",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "khakis",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 2,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "khakis",
+    "jacket": "zara navy blue",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 3.5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "khakis",
+    "jacket": "khaki bomber",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 3,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "black ralph lauren sweatshirt",
+    "bottom": "khakis",
+    "jacket": "navy winter coat",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 4.5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "columbia sweatshirt",
+    "bottom": "khakis",
+    "jacket": "",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 2.5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "columbia sweatshirt",
+    "bottom": "khakis",
+    "jacket": "khaki bomber",
+    "shoes": "brown",
+    "socks": "black",
+    "warmth": 3.5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "columbia sweatshirt",
+    "bottom": "khakis",
+    "jacket": "navy winter coat",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "blue formal shirt",
     "bottom": "khakis",
     "jacket": "black overcoat",
     "shoes": "suede or black",
@@ -185,7 +627,7 @@
     "trendy": 1
   },
   {
-    "top": "blue button down",
+    "top": "blue formal shirt",
     "bottom": "khakis",
     "jacket": "black",
     "shoes": "suede or black",
@@ -196,7 +638,7 @@
     "trendy": 1
   },
   {
-    "top": "blue button down",
+    "top": "blue formal shirt",
     "bottom": "khakis",
     "jacket": "",
     "shoes": "suede or black",
@@ -212,6 +654,7 @@
     "jacket": "black overcoat",
     "shoes": "brown",
     "socks": "any",
+    "accessories": "black scarf",
     "warmth": 5,
     "formalness": 3,
     "quality": 3,
@@ -223,9 +666,87 @@
     "jacket": "",
     "shoes": "brown",
     "socks": "any",
+    "accessories": "black scarf",
     "warmth": 3,
     "formalness": 2,
     "quality": 3,
     "trendy": 2
+  },
+  {
+    "top": "express white undershirt",
+    "bottom": "dark blue jeans",
+    "jacket": "adi patagonia",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 4,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 2
+  },
+  {
+    "top": "express white undershirt",
+    "bottom": "dark blue jeans",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 3,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 3
+  },
+  {
+    "top": "corduroy shirt",
+    "bottom": "khakis",
+    "jacket": "navy winter coat",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 5,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 3
+  },
+  {
+    "top": "corduroy shirt",
+    "bottom": "khakis",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 3,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 3
+  },
+  {
+    "top": "corduroy shirt",
+    "bottom": "khakis",
+    "jacket": "",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 2,
+    "formalness": 2,
+    "quality": 2,
+    "trendy": 3
+  },
+  {
+    "top": "peanuts shelter",
+    "bottom": "black chinos",
+    "jacket": "navy winter coat",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 5,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 3
+  },
+  {
+    "top": "peanuts shelter",
+    "bottom": "black chinos",
+    "jacket": "black",
+    "shoes": "white",
+    "socks": "white/gray",
+    "warmth": 4,
+    "formalness": 1,
+    "quality": 2,
+    "trendy": 3
   }
 ]
