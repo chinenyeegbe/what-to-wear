@@ -5,7 +5,7 @@ WhatToWear will recommend you outfits to wear based on what clothes you have ava
 
 WhatToWear does not come up with the outfits—-you do, and enter them into the database once. From there, WhatToWear keeps track of your clothing inventory. You can specify how many times you are willing to rewear a piece, and after you have worn it that many times, WhatToWear will stop recommending outfits that use that piece (until you tell the app you have done your laundry).
 
-### Screenshots
+### Demo
 
 <p align="center">
   <img src="https://s3.amazonaws.com/rohanp/whattoweardemo.gif" width="350"/>
