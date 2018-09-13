@@ -115,7 +115,7 @@ export default class App extends React.Component {
     return (outfit.quality === this.state.quality || this.state.quality == 2)  && 
            (outfit.trendy === this.state.trendy || this.state.trendy == 2) &&
            (outfit.formalness === this.state.formalness || this.state.formalness == 2) &&
-           (outfit.warmth == this.tempToWarmth(this.state.temp) || (Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 0.5) && r())
+           (!this.state.temp || outfit.warmth == this.tempToWarmth(this.state.temp) || (Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 0.5) && r())
   }
 
   launder(){
@@ -135,7 +135,7 @@ export default class App extends React.Component {
  
     return (
       <View style={styles.container}>
-        <Text style={{marginBottom: 20, fontSize: 16}}> {this.state.weather}, {Math.round(this.state.temp)}F </Text>
+        <Text style={{marginBottom: 20, fontSize: 16}}> {this.state.temp ? this.state.weather : null}, {Math.round(this.state.temp)}F </Text>
         
         {outfit 
           ? <Outfit {...outfit} />
