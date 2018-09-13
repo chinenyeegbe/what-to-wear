@@ -19,6 +19,6 @@ WhatToWear does not come up with the outfits—-you do, and enter them into the 
 5) Install Expo via `npm install expo-cli --global`
 6) Run `expo publish`. You may have to create an account/login.
 7) Download the Expo app on your phone
-8) Once you login on your phone you should see 
+8) Once you login on your phone you should see whattowear
 
 Alternatively to these instructions, you can run `npm eject` after step 3, open the project up in Xcode, and proceed from there. I do not know how that works.
