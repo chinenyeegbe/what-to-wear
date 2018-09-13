@@ -14,7 +14,7 @@ WhatToWear does not come up with the outfits—-you do, and enter them into the 
 ### Wow what a useful app! How do I use WhatToWear?
 1) Clone this repo
 2) Run `npm install`
-3) Edit `inventory.json` and `outfits.json` with your info. You can use `generate_outfits.js` to help you out, or come up with your own script.  
+3) In the `clothes` directory, edit `inventory.json` and `outfits.json` with your info. You can use `generate_outfits.js` to help you out, or come up with your own script.  
 4) Run `npm start` to run on simulator
 5) Install Expo via `npm install expo-cli --global`
 6) Run `expo publish`. You may have to create an account/login.
