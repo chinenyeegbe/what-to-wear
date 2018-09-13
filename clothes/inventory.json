@@ -43,12 +43,12 @@
   "yellowish khakis": 3,
   "green khakis": 3,
   "light gray sweatpants": 2,
-  "black": 100,
-  "khaki bomber": 100,
-  "green bomber": 100,
-  "zara navy blue": 300,
-  "navy blue sports coat": 300,
-  "navy winter coat": 300,
+  "black": 30,
+  "khaki bomber": 30,
+  "green bomber": 30,
   "adi patagonia": 10,
-  "black overcoat": 300
+  "zara navy blue": null,
+  "navy blue sports coat": null,
+  "navy winter coat": null,
+  "black overcoat": null
 }

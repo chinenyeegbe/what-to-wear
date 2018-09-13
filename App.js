@@ -60,7 +60,7 @@ export default class App extends React.Component {
       let minTemp = KelvinToFarenheit(body.main["temp_min"])
       let maxTemp = KelvinToFarenheit(body.main["temp_max"])
       let weather = body.weather[0].description
-      this.setState({temp, minTemp, maxTemp, weather})
+      this.setState({temp, minTemp, maxTemp, weather, lat, long})
     } catch(e) {
       console.log("error getting weather. check your api key")
       console.log(e)
@@ -79,32 +79,43 @@ export default class App extends React.Component {
   }
 
   tempToWarmth(t){
+    if (t < 20)
+      return 7
+    if (t < 25)
+      return 6.5
+    if (t < 30)
+      return 6
     if (t < 35)
-      return 5
+      return 5.5
     if (t < 40)
+      return 5
+    if (t < 45)
       return 4.5
-    if (t < 47)
+    if (t < 50)
       return 4
     if (t < 55)
       return 3.5
     if (t < 60)
       return 3
     if (t < 65)
-      return 2.5
+      return 2.
     if (t < 70)
       return 2
     if (t < 75)
       return 1.5
-    else
+    if (t < 80)
       return 1
+    if (t < 85)
+      return 0.5
+    else
+      return 0
   }
 
   satisfiesContraints(outfit){
-    return true;
-    return (outfit.quality === this.state.quality || ((Math.abs(outfit.quality - this.state.quality) === 1) && r()))  && 
-           (outfit.trendy === this.state.trendy || (Math.abs(outfit.trendy - this.state.trendy) === 1 &&  r())) &&
-           (outfit.formalness === this.state.formalness || (Math.abs(outfit.formalness - this.state.formalness) == 1 && r())) &&
-           (this.state.temp === undefined || Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 0.5)
+    return (outfit.quality === this.state.quality || this.state.quality == 2)  && 
+           (outfit.trendy === this.state.trendy || this.state.trendy == 2) &&
+           (outfit.formalness === this.state.formalness || this.state.formalness == 2) &&
+           (outfit.warmth == this.tempToWarmth(this.state.temp) || (Math.abs(outfit.warmth -  this.tempToWarmth(this.state.temp)) <= 0.5) && r())
   }
 
   launder(){
@@ -124,7 +135,7 @@ export default class App extends React.Component {
  
     return (
       <View style={styles.container}>
-        <Text style={{marginBottom: 20}}> {this.state.weather}, {Math.round(this.state.temp)}F </Text>
+        <Text style={{marginBottom: 20, fontSize: 16}}> {this.state.weather}, {Math.round(this.state.temp)}F </Text>
         
         {outfit 
           ? <Outfit {...outfit} />
@@ -133,7 +144,6 @@ export default class App extends React.Component {
               <Text>do your laundry or something</Text>
              </View>)
         }
-
         <Text style={{marginTop: 20}}> Quality </Text>
         <Slider 
           style={styles.slider}
@@ -141,7 +151,10 @@ export default class App extends React.Component {
           maximumValue={3}
           step={1}
           value={this.state.quality}
-          onSlidingComplete={val => this.setState({ quality: val })}
+          onSlidingComplete={val => this.setState({ 
+            quality: val,
+            offset : parseInt(Math.random() * outfits.length)
+          })}
         />
         <Text> Trendiness </Text>
          <Slider 
@@ -150,7 +163,10 @@ export default class App extends React.Component {
           maximumValue={3}
           step={1}
           value={this.state.trendy}
-          onSlidingComplete={val => this.setState({ trendy: val })}
+          onSlidingComplete={val => this.setState({ 
+            trendy: val,
+            offset : parseInt(Math.random() * outfits.length)
+          })}
         />
         <Text> Formalness </Text>
         <Slider 
@@ -159,7 +175,10 @@ export default class App extends React.Component {
           maximumValue={3}
           step={1}
           value={this.state.formalness}
-          onSlidingComplete={val => this.setState({ formalness: val })}
+          onSlidingComplete={val => this.setState({ 
+            formalness: val,
+            offset : parseInt(Math.random() * outfits.length)
+          })}
         />       
         <View style={styles.button}>
           <Button
@@ -203,11 +222,10 @@ function r(){
 function Outfit(props){
   return (
     <View>
-      <Text> Top: {props.top} </Text>
-      <Text> Bottom: {props.bottom} </Text>
-      <Text> Jacket: {props.jacket}</Text>
-      <Text> Shoes: {props.shoes}</Text>
-      <Text> Socks: {props.socks}</Text>
+      {Object.keys(props).map( key => {
+        if (typeof props[key] === 'string')
+          return <Text style={styles.text} key={key}> {key}: {props[key]} </Text>
+      })}
     </View>
   )
 }
@@ -227,5 +245,8 @@ const styles = StyleSheet.create({
   },
   slider: {
     width: 175
+  },
+  text: {
+    fontSize: 16
   }
 });

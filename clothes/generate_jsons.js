@@ -67,34 +67,42 @@ const Bottoms = {
 Object.freeze(Bottoms);
 
 const Jackets = {
-	BLACK_JACKET: new Cloth("black", 2.5, 100),
-	KHAKI_BOMBER: new Cloth("khaki bomber", 2, 100),
-	GREEN_BOMBER: new Cloth("green bomber", 2, 100),
-	ZARA_NAVY_JACKET: new Cloth("zara navy blue", 3, 300),
-	NAVY_SPORTS_COAT: new Cloth("navy blue sports coat", 3, 300),
-	NAVY_WINTER_COAT: new Cloth("navy winter coat", 4, 300),
-	ADI_PATAGONIA: new Cloth("adi patagonia", 3, 10),
-	BLACK_OVERCOAT: new Cloth("black overcoat", 3.5, 300)
+	BLACK_JACKET: new Cloth("black", 1.5, 30),
+	KHAKI_BOMBER: new Cloth("khaki bomber", 1, 30),
+	GREEN_BOMBER: new Cloth("green bomber", 1, 30),
+	ADI_PATAGONIA: new Cloth("adi patagonia", 2.5, 10),
+	ZARA_NAVY_JACKET: new Cloth("zara navy blue", 2, Infinity),
+	NAVY_SPORTS_COAT: new Cloth("navy blue sports coat", 2, Infinity),
+	NAVY_WINTER_COAT: new Cloth("navy winter coat", 3, Infinity),
+	BLACK_OVERCOAT: new Cloth("black overcoat", 3, Infinity)
  }
 Object.freeze(Jackets);
+
+const Accessories = {
+	BLACK_SCARF: new Cloth("black scarf", 1, 10),
+	MAROON_BEANIE: new Cloth("maroon beanie", 1, 10),
+
+}
 
 const outfits = [
 		// summer
 		{
 			top: Tops.NASA_SHIRT,
 			bottom: Bottoms.LIGHT_BLUE_JEANS,
-			jacket: ["", Jackets.BLACK_JACKET, Jackets.GREEN_BOMBER],
+			jacket: [null, Jackets.BLACK_JACKET, Jackets.GREEN_BOMBER],
+			watch: "fossil or squiggly",
 			shoes: "white",
 			socks: "white or gray",
 			formalness: 1,
 			quality: 3,
 			trendy: 2
-		}, 
+		},
 		// winter
 		{
 			top: Tops.RED_FLANNEL,
 			bottom: Bottoms.DARK_BLUE_JEANS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.ZARA_NAVY_JACKET, Jackets.BLACK_JACKET],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.ZARA_NAVY_JACKET, Jackets.BLACK_JACKET],
+			watch: "fossil",
 			shoes: "brown",
 			socks: "any",
 			formalness: 2,
@@ -103,7 +111,8 @@ const outfits = [
 		},	{
 			top: Tops.RED_FLANNEL,
 			bottom: Bottoms.BLACK_CHINOS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.ZARA_NAVY_JACKET],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.ZARA_NAVY_JACKET],
+			watch: "fossil",
 			shoes: "brown",
 			socks: "any",
 			formalness: 2,
@@ -112,7 +121,8 @@ const outfits = [
 		}, {
 			top: Tops.YELLOW_STRIPED_SWEATSHIRT,
 			bottom: Bottoms.BLACK_CHINOS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
+			watch: "squiggly",
 			shoes: "black",
 			socks: "white or gray",
 			formalness: 1,
@@ -121,7 +131,8 @@ const outfits = [
 		}, {
 			top: Tops.YELLOW_STRIPED_SWEATSHIRT,
 			bottom: Bottoms.BLUE_JEANS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "squiggly",
 			shoes: "black",
 			socks: "white or gray",
 			formalness: 1,
@@ -130,7 +141,8 @@ const outfits = [
 		},{
 			top: Tops.YELLOW_STRIPED_SWEATSHIRT,
 			bottom: Bottoms.YELLOWISH_KHAKIS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "squiggly",
 			shoes: "black",
 			socks: "white or gray",
 			formalness: 1,
@@ -139,7 +151,9 @@ const outfits = [
 		},{
 			top: Tops.BURGANDY_SWEATER,
 			bottom: Bottoms.BLACK_CHINOS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.NAVY_WINTER_COAT],
+			scarf: [null, null, Accessories.BLACK_SCARF],
+			watch: "fossil",
 			shoes: "brown or black",
 			socks: "black",
 			formalness: 2,
@@ -148,7 +162,8 @@ const outfits = [
 		},{
 			top: Tops.BURGANDY_SWEATER,
 			bottom: Bottoms.KHAKIS,
-			jacket: ["", Jackets.BLACK_OVERCOAT, Jackets.ZARA_NAVY_JACKET, Jackets.BLACK_JACKET],
+			jacket: [null, Jackets.BLACK_OVERCOAT, Jackets.ZARA_NAVY_JACKET, Jackets.BLACK_JACKET],
+			watch: "fossil",
 			shoes: "brown or black",
 			socks: "black",
 			formalness: [2, 2, 1],
@@ -157,7 +172,8 @@ const outfits = [
 		}, {
 			top: Tops.MARBLED_BLUE_SWEATSHIRT,
 			bottom: Bottoms.KHAKIS,
-			jacket: "",
+			jacket: null,
+			watch: "fossil or squiggly",
 			shoes: "white",
 			socks: "white/gray",
 			formalness: 2,
@@ -166,7 +182,7 @@ const outfits = [
 		}, {
 			top: Tops.FESTIVE_SWEATER,
 			bottom: Bottoms.BLACK_CHINOS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
 			shoes: "white",
 			socks: "gray",
 			formalness: 1,
@@ -175,7 +191,7 @@ const outfits = [
 		}, {
 			top: Tops.FESTIVE_SWEATER,
 			bottom: Bottoms.BLUE_JEANS,
-			jacket: ["", Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
+			jacket: [null, Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
 			shoes: "white",
 			socks: "gray",
 			formalness: 1,
@@ -184,7 +200,8 @@ const outfits = [
 		}, {
 			top: Tops.TEXTURED_GRAY_SWEATER,
 			bottom: Bottoms.LIGHT_BLUE_JEANS,
-			jacket: ["", Jackets.BLACK_OVERCOAT],
+			jacket: [null, Jackets.BLACK_OVERCOAT],
+			watch: "squiggly",
 			shoes: "khaki boots",
 			socks: "any",
 			formalness: 1,
@@ -193,7 +210,8 @@ const outfits = [
 		}, {
 			top: Tops.COLUMBIA_CC_LONGSLEEVE,
 			bottom: Bottoms.KHAKIS,
-			jacket: ["", Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "squiggly",
 			shoes: "white",
 			socks: "gray",
 			formalness: 1,
@@ -202,7 +220,8 @@ const outfits = [
 		}, {
 			top: Tops.PATAGONIA_LONGSLEEVE,
 			bottom: Bottoms.DARK_BLUE_JEANS,
-			jacket: ["", Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "fossil",
 			shoes: "white",
 			socks: "gray",
 			formalness: 1,
@@ -211,16 +230,28 @@ const outfits = [
 		},{
 			top: Tops.PATAGONIA_LONGSLEEVE,
 			bottom: Bottoms.GREEN_KHAKIS,
-			jacket: ["", Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "fossil",
 			shoes: "white",
 			socks: "gray",
 			formalness: 1,
 			quality: 2,
 			trendy: 2
-		}, {
+		},{
+			top: Tops.PATAGONIA_LONGSLEEVE,
+			bottom: Bottoms.LIGHT_GRAY_SWEATPANTS,
+			jacket: [null, Jackets.BLACK_JACKET, Jackets.KHAKI_BOMBER],
+			watch: "fossil",
+			shoes: "white",
+			socks: "gray",
+			formalness: 1,
+			quality: 2,
+			trendy: 2
+		},  {
 			top: Tops.BLUE_RIBBED_SWEATER,
 			bottom: Bottoms.BROWN_KHAKIS,
-			jacket: ["", "black", "black overcoat", Jackets.NAVY_WINTER_COAT],
+			jacket: [null, "black", "black overcoat", Jackets.NAVY_WINTER_COAT],
+			watch: "fossil",
 			shoes: "brown",
 			socks: "black",
 			formalness: [1, 1, 2, 1],
@@ -229,7 +260,8 @@ const outfits = [
 		}, {
 			top: Tops.BLUE_RIBBED_SWEATER,
 			bottom: Bottoms.YELLOWISH_KHAKIS,
-			jacket: ["", "black", "black overcoat", Jackets.NAVY_WINTER_COAT],
+			jacket: [null, "black", "black overcoat", Jackets.NAVY_WINTER_COAT],
+			watch: "fossil",
 			shoes: "brown",
 			socks: "black",
 			formalness: [1, 1, 2],
@@ -238,25 +270,28 @@ const outfits = [
 		}, {
 			top: Tops.BLACK_RALPH_LAUREN_SWEATSHIRT,
 			bottom: Bottoms.BLUE_JEANS,
-			jacket: ["", Jackets.KHAKI_BOMBER],
+			jacket: [null, Jackets.KHAKI_BOMBER],
+			watch: "fossil",
 			shoes: "brown shoes",
 			socks: "black",
 			formalness: 1,
-			quality: 2,
+			quality: 3,
 			trendy: 2
 		}, {
 			top: Tops.BLACK_RALPH_LAUREN_SWEATSHIRT,
 			bottom: Bottoms.KHAKIS,
-			jacket: ["", Jackets.ZARA_NAVY_JACKET, Jackets.KHAKI_BOMBER, Jackets.NAVY_WINTER_COAT],
+			jacket: [null, Jackets.ZARA_NAVY_JACKET, Jackets.KHAKI_BOMBER, Jackets.NAVY_WINTER_COAT],
+			watch: "fossil",
 			shoes: ["brown shoes", "white shoes"],
 			socks: ["black", "black", "white/gray", "white/gray"],
 			formalness: 2,
-			quality: 2,
+			quality: 3,
 			trendy: 2
 		}, {
 			top: Tops.COLUMBIA_SWEATSHIRT,
 			bottom: Bottoms.KHAKIS,
-			jacket: ["", Jackets.KHAKI_BOMBER, Jackets.NAVY_WINTER_COAT],
+			jacket: [null, Jackets.KHAKI_BOMBER, Jackets.NAVY_WINTER_COAT],
+			watch: "fossil",
 			shoes: ["brown shoes", "white shoes"],
 			socks: ["black", "black", "white/gray"],
 			formalness: 1,
@@ -265,7 +300,8 @@ const outfits = [
 		}, {
 			top: Tops.BLUE_FORMAL_SHIRT,
 			bottom: Bottoms.KHAKIS,
-			jacket: ["black overcoat", "black", ""],
+			jacket: ["black overcoat", "black", null],
+			watch: "fossil",
 			shoes: "suede or black",
 			socks: "any",
 			formalness: 3,
@@ -274,7 +310,8 @@ const outfits = [
 		}, {
 			top: Tops.DARK_GREEN_SWEATER,
 			bottom: Bottoms.KHAKIS,
-			jacket: [Jackets.BLACK_OVERCOAT, ""],
+			jacket: [Jackets.BLACK_OVERCOAT, null],
+			watch: "fossil",
 			shoes: "brown",
 			socks: "any",
 			accessories: "black scarf",
@@ -284,7 +321,7 @@ const outfits = [
 		}, {
 			top: Tops.EXPRESS_WHITE_UNDERSHIRT,
 			bottom: Bottoms.DARK_BLUE_JEANS,
-			jacket: [Jackets.ADI_PATAGONIA, Jackets.BLACK_JACKET, ""],
+			jacket: [Jackets.ADI_PATAGONIA, Jackets.BLACK_JACKET, null],
 			shoes: "white",
 			socks: "white/gray",
 			formalness: 1,
@@ -293,7 +330,8 @@ const outfits = [
 		}, {
 			top: Tops.CORDUROY_SHIRT,
 			bottom: Bottoms.KHAKIS,
-			jacket: [Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, ""],
+			jacket: [Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET, null],
+			watch: "fossil",
 			shoes: "white",
 			socks: "white/gray",
 			formalness: 3,
@@ -312,6 +350,7 @@ const outfits = [
 			top: Tops.PEANUTS_SWEATSHIRT,
 			bottom: Bottoms.BLACK_CHINOS,
 			jacket: [Jackets.NAVY_WINTER_COAT, Jackets.BLACK_JACKET],
+			watch: "squiggly",
 			shoes: "white",
 			socks: "white/gray",
 			formalness: 1,
@@ -321,6 +360,7 @@ const outfits = [
 			top: Tops.WHITE_TSHIRT,
 			bottom: Bottoms.KHAKIS,
 			jacket: Tops.DENIM_SHIRT,
+			watch: "fossil",
 			shoes: "white or brown",
 			socks: "white/gray",
 			formalness: 2,
@@ -329,6 +369,7 @@ const outfits = [
 		}, {
 			top: Tops.DENIM_SHIRT,
 			bottom: Bottoms.KHAKIS,
+			watch: "watch",
 			shoes: "white or brown",
 			socks: "white/gray",
 			formalness: 2,
@@ -377,7 +418,7 @@ for (outfit of outfits) {
 
 			for (key of Object.keys(toAdd)){
 
-				if (typeof toAdd[key] === 'object'){
+				if (toAdd[key] && typeof toAdd[key] === 'object'){
 					warmth += toAdd[key].warmth
 					toAdd[key] = toAdd[key].name
 				}
@@ -392,8 +433,4 @@ for (outfit of outfits) {
 
 fs.writeFileSync('./outfits.json', JSON.stringify(expandedOutfits, null, 2), 'utf-8')
 fs.writeFileSync('./inventory.json', JSON.stringify(inventory, null, 2), 'utf-8')
-
-
-
-
 
